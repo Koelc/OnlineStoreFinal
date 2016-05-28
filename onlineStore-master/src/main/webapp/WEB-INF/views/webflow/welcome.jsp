@@ -17,7 +17,7 @@
 				<a href="home.obj">Home</a>
 				<br /><br />
 				<h2><!-- display the userId just entered -->
-				Welcome ${userBean.userId }</h2>
+				No. of Items you added to cart successfully ${userBean.getQty() }</h2>
 				<br/>
 			</fieldset>
 		</div>

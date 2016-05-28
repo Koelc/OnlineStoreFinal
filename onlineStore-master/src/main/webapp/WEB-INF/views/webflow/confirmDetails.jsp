@@ -20,6 +20,7 @@
 				<p>You have entered </p>
 				<sf:form modelAttribute="userBean">
 					<sf:label path="qty">Quantity:</sf:label>${userBean.getQty()}
+					<input name="_eventId_submit" type="submit" value="Confirm Details" />
 				</sf:form>	
 				
 				<%-- <sf:form modelAttribute="userBean">
