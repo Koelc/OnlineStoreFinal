@@ -3,7 +3,7 @@
 <!DOCTYPE html>  
  <html>  
  <head>  
-   <title>Angular JS table sort and filter example </title>  
+   <title>Product Table for Customer </title>  
    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">  
    <script src="http://code.angularjs.org/1.4.8/angular.js"></script>  
    <script src="http://code.angularjs.org/1.4.8/angular-resource.js"></script>  
@@ -47,10 +47,35 @@
    </style>  
  </head>  
  <body ng-app="MyForm">  
+ <header id="header">
+<div class="top-bar">
+<nav class="navbar navbar-inverse" role="banner">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-xs-4">
+<div class="top-number"><p class="text-primary"><span class="glyphicon glyphicon-earphone"></span><i class="fa fa-phone-square"></i> +9123 456 78 90</p></div>
+</div>
+<img src = "C:\Users\koel.chowdhury\DT TTT\Images\logos.png" class="img-responsive" alt="No image" width="104" height="136">
+</div>
+</div>
+  <div>
+  
+  <ul class="nav navbar-nav">
+     	
+  		<li> <a href="index">Home</a></li>
+  	<!-- 	<li><a href="Login">Login</a></li> -->
+  
+    
+</ul>
+</div>
+</nav>
+</div>
+</header>
+ 
    <div ng-controller="myCtrl">  
-     <h3>List students</h3>  
+     <h3>List Products</h3>  
      <div class="container-fluid">  
-       <pre>Click header link to sort, input into filter text to filter</pre>  
+       <!-- <pre>Click header link to sort, input into filter text to filter</pre> -->  
        <hr />  
        <table class="table table-striped">  
          <thead>  
@@ -68,7 +93,7 @@
          </thead>  
          <tbody>  
            <tr>  
-             <td>Filter =>></td>  
+             <td></td>  
              <td> <input type="text" ng-model="search.id" /></td>  
              <td> <input type="text" ng-model="search.name" /></td>  
              <td> <input type="text" ng-model="search.price" /> </td>  
@@ -84,6 +109,9 @@
              <td>{{ user.name}}</td>  
              <td>{{ user.price}}</td>  
              <td>{{ user.category}}</td>  
+             <td>  
+               <a href = "productDescription">Details</a> 
+             </td>
            </tr>  
          </tbody>  
        </table>  

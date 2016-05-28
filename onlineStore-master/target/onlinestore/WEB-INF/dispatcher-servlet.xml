@@ -4,6 +4,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:mvc="http://www.springframework.org/schema/mvc"
 xmlns:tx="http://www.springframework.org/schema/tx"
 xmlns:context="http://www.springframework.org/schema/context"
+xmlns:webflow="http://www.springframework.org/schema/webflow-config"
 xsi:schemaLocation="http://www.springframework.org/schema/mvc 
 http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
                     http://www.springframework.org/schema/tx 
@@ -13,20 +14,57 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
                     http://www.springframework.org/schema/mvc
                     http://www.springframework.org/schema/mvc/spring-mvc.xsd
                     http://www.springframework.org/schema/context                   
-                    http://www.springframework.org/schema/context/spring-context.xsd">
-
+                    http://www.springframework.org/schema/context/spring-context.xsd
+                    http://www.springframework.org/schema/webflow-config
+                    http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">   
+                    
 
  <mvc:annotation-driven/>
 <mvc:default-servlet-handler/>
 <context:annotation-config />
                 <context:component-scan base-package="controllers" />
                 <context:component-scan base-package="dao" /> 
+    
                 
               <mvc:resources mapping="/resources/images/**" location="/resources/images/" />
                
                 <tx:annotation-driven/>
+                
+                <!-- WebFlow Configuration -->
+	<webflow:flow-executor id="flowExecutor" />
+ 
+	<webflow:flow-registry id="flowRegistry" flow-builder-services="flowBuilderServices" base-path="/WEB-INF/views/webflow">
+		<!-- here the id is mapped to invoke this flow -->
+		<webflow:flow-location id="addCart" path="webFlow.xml" />
+	</webflow:flow-registry>
+ 
+	<webflow:flow-builder-services id="flowBuilderServices"
+		view-factory-creator="viewFactoryCreator" />
+ 
+	<bean id="viewFactoryCreator"
+		class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
+		<property name="viewResolvers">
+			<list>
+				<ref bean="viewResolver" />
+			</list>
+			
+	<bean id="viewResolver"	class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"	value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/views/webflow/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+ 
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+		<property name="flowExecutor" ref="flowExecutor" />
+	</bean>
+ 
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+		<property name="flowRegistry" ref="flowRegistry" />
+		<property name="order" value="0" />
+	</bean>
+			
                
-                <bean
+              <bean
                                 class="org.springframework.web.servlet.view.InternalResourceViewResolver">
                                 <property name="prefix">
                                                 <value>/WEB-INF/views/</value>
@@ -34,7 +72,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
                                 <property name="suffix">
                                                 <value>.jsp</value>
                                 </property>
-                </bean>
+                </bean> 
               
               <bean id="multipartResolver"
     class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
@@ -50,4 +88,4 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
                <bean id="di" class="dao.productServices" />
                
                  <bean id="si" class="dao.productDAOImpl" />  -->
-</beans>
+  </beans>

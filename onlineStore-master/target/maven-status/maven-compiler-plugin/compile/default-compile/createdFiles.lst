@@ -2,6 +2,7 @@ controllers\HomeController.class
 models\Product.class
 dao\productDAOImpl.class
 dao\productServices.class
+models\userBean.class
 dao\customerDAOImpl.class
 dao\customerServices.class
 models\FileUpload.class

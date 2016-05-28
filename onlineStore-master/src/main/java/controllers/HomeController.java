@@ -58,6 +58,12 @@ public class HomeController {
     	return "index";
     }
     
+    @RequestMapping("/productDescription")
+    public String showProductDescription()
+    {
+    	return "productDescription";
+    }
+    
     
     @RequestMapping("/registration")
     public String showReg(Model model)

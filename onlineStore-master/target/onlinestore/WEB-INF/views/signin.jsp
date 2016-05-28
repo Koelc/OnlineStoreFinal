@@ -31,11 +31,8 @@
 <img src = "C:\Users\koel.chowdhury\DT TTT\Images\logos.png" class="img-responsive" alt="No image" width="104" height="136">
 </div>
 </nav>
-<<<<<<< HEAD
+
 <li> <a href="index"><span class="glyphicon glyphicon-home">Home</span></a></li>
-=======
-<li> <a href="index">Home</a></li>
->>>>>>> origin/master
 </div>
 </header>
 
