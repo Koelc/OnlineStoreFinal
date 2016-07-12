@@ -70,7 +70,8 @@ transform:scale(1.5);
   <ul class="nav navbar-nav">
      	
   		<li> <a href="registration">Register</a></li>
-  	<!-- 	<li><a href="Login">Login</a></li> -->
+  		<li> <a href="emailpage">Recommend</a></li>
+  		  	<!-- 	<li><a href="Login">Login</a></li> -->
   	
   		<li class = "dropdown">
   		<a href="#" class = "dropdown-toggle" data-toggle= "dropdown"><span class="glyphicon glyphicon-user">Sign In</span ><span class="caret"></span></a>

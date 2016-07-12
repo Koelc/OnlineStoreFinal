@@ -47,11 +47,13 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
 			<list>
 				<ref bean="viewResolver" />
 			</list>
-			
+			</property>
+			</bean>
 	<bean id="viewResolver"	class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"	value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/WEB-INF/views/webflow/" />
 		<property name="suffix" value=".jsp" />
+		 <property name="order" value="0"/>
 	</bean>
  
 	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
@@ -72,6 +74,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
                                 <property name="suffix">
                                                 <value>.jsp</value>
                                 </property>
+                                <property name="order" value="-1"/>
                 </bean> 
               
               <bean id="multipartResolver"

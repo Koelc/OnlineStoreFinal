@@ -8,14 +8,9 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 
+import dao.StudentServices;
 import dao.customerServices;
 import dao.productServices;
 import models.Product;
@@ -43,6 +39,8 @@ public class HomeController {
   public productServices productService;
     @Autowired
   public customerServices customerService; 
+    @Autowired
+    public StudentServices studentServices;
    /* @Qualifier(value="productService")
     public void setPersonService(productServices ps){
         this.productService = ps;

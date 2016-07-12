@@ -15,12 +15,12 @@ package controllers;
 	 
 		public String validateDetails(UserBean userBean,MessageContext messageContext){
 			String status = "success";
-			if(userBean.getQty()==null){
-				messageContext.addMessage(new MessageBuilder().error().source("qty").defaultText("Quantity cannot be Empty").build());
+			if(userBean.getUserId().isEmpty()){
+				messageContext.addMessage(new MessageBuilder().error().source(
+						"userId").defaultText("UserId cannot be Empty").build());
 				status = "failure";
 			}
-			return status;
-			/*if(userBean.getEmail().isEmpty()){
+			if(userBean.getEmail().isEmpty()){
 				messageContext.addMessage(new MessageBuilder().error().source(
 						"email").defaultText("Email cannot be Empty").build());
 				status = "failure";
@@ -30,8 +30,7 @@ package controllers;
 				status = "failure";
 			}
 			return status;
-		}*/
-	}
+		}
 	}
 
 

@@ -4,7 +4,8 @@ package controllers;
 
 	public class UserBean implements Serializable{
 
-		public Integer Qty;
+		
+		/*public Integer Qty;
 
 		public Integer getQty() {
 			return Qty;
@@ -12,10 +13,9 @@ package controllers;
 
 		public void setQty(Integer qty) {
 			Qty = qty;
-		}
+		}*/
 		
-		
-		/*private static final long serialVersionUID = 4657462015039726030L;
+		private static final long serialVersionUID = 4657462015039726030L;
 		private String userId;
 		private String email;
 		private Integer age;
@@ -38,6 +38,6 @@ package controllers;
 		public String getEmail() {
 			return email;
 		}
-*/
+
 	}
 

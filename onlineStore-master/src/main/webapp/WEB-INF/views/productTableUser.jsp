@@ -111,6 +111,7 @@
              <td>{{ user.category}}</td>  
              <td>  
                <a href = "productDescription">Details</a> 
+               <a href = "addToCart">Details</a> 
              </td>
            </tr>  
          </tbody>  
